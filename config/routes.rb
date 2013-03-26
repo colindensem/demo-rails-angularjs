@@ -1,25 +1,23 @@
 DemoRailsAngularjs::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  get "home/index"
 
   devise_for :users
-
-  root :to => "home#index"
-
-
   namespace :api do
     namespace :v1 do
       devise_scope :user do
         post 'sessions' => 'sessions#create', :as => 'login'
         delete 'sessions' => 'sessions#destroy', :as => 'logout'
       end
+
+      get 'sites' => 'sites#index', :as=>'sites'
     end
   end
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
