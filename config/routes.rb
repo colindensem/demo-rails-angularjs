@@ -1,6 +1,8 @@
 DemoRailsAngularjs::Application.routes.draw do
 
 
+  get "home/index"
+
   devise_for :users
   namespace :api do
     namespace :v1 do
@@ -10,12 +12,18 @@ DemoRailsAngularjs::Application.routes.draw do
       end
 
       get 'sites' => 'sites#index', :as=>'sites'
+      get 'info' => 'info#index', :as=>'info'
     end
   end
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  #TODO remove this. Reason: if user is in angular app e.g. at /info
+  # and reloads, rails is trying to pick that route up.
+  # If behind nginx, possible rewrite all to index would solve... smells bad though.
+  match "*path" =>  'home#index', :as =>'catchall'
 
   root :to => "home#index"
   # The priority is based upon order of creation:
