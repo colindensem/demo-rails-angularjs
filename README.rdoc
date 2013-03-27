@@ -10,11 +10,12 @@ Rails serves json via api's, possibly looking at Grape.
 Lean on Rails comfort for server tasks, e.g. email, workflow, db access and so on.
 Lean on the asset pipeline to comine and minify. Which requires:
  Embedding angularJS within the assets.
-  Aiming to use an organisation by modules and not layers.  Appears difficult to achieve,
-  layers works and it's in keeping with Rails, even if it's not where I'm at...
+
+Aiming to use an organisation by modules and not layers.  Appears difficult to achieve,
+layers works and it's in keeping with Rails, even if it's not where I'm at...
 
 Alternatives to the asset pipline would be to utilise the likes of grunt and yoman. These tools
- can manage the angularJS app outside of rails, but compile into the public dir.
+can manage the angularJS app outside of rails, but compile into the public dir.
 This would then be easy when sat behind the likes of nginx.
     Pros:
         Also convienent to pass AngularJS app to non rails developer.
@@ -38,7 +39,9 @@ where I'm not even certain if the approach is right, but it's a path...
 To the many people who have blogged about AngularJS and those who've listened to my questions.
 
 I'd like to thank:
+
  The guys behind angular-app, https://github.com/angular-app/angular-app. It's a cracking reference app and I've leant on it heavily.
+
  Nils of http://nils-blum-oeste.net/ for a collection of vital articles on token_auth wrapping.
 
 == Description of Contents
