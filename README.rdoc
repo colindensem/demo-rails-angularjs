@@ -28,66 +28,66 @@ The basic goal is a rails 3.2 app, with devise, active_admin, bootstrap, angular
 
 The initial and relevant directory structure of this application is:
 
-|-- app
-|   |-- admin
-|       |-- admin_user.rb
-|       |-- dashboard.rb
-|       |-- site.rb
-|       `-- user.rb
-|   |-- assets
-|       |-- images
-|       |-- javascripts
-|           |-- active_admin.js
-|           |-- app
-|               |-- app.js
-|               |-- assets.js.erb
-|               |-- controllers
-|                   |-- app_ctrl.js
-|                   `-- info_ctrl.js
-|               |-- controllers.js
-|               |-- directives.js
-|               |-- filters.js
-|               `-- services.js
-|           `-- application.js
-|       |-- stylesheets
-|           |-- application.css.scss
-|           `-- overrides.css.scss
-|       `-- templates
-|           |-- info.html
-|           `-- login.html
-|   |-- controllers
-|       |-- api
-|           `-- v1
-|               |-- info_controller.rb
-|               |-- sessions_controller.rb
-|               `-- sites_controller.rb
-|       |-- application_controller.rb
-|       `-- home_controller.rb
-|   |-- helpers
-|      `-- application_helper.rb
-|   |-- mailers
-|   |-- models
-|       |-- admin_user.rb
-|       |-- site.rb
-|       `-- user.rb
-|   `-- views
-|       |-- home
-|           `-- index.html.erb
-|       `-- layouts
-|           `-- application.html.erb
-|-- public
-|   |-- 404.html
-|   |-- 422.html
-|   |-- 500.html
-|   |-- favicon.ico
-|   `-- robots.txt
-`-- vendor
-    |-- assets
-        |-- javascripts
-            |-- angular-resource.js
-            |-- angular.js
-            |-- jquery.js
-            |-- ui-bootstrap-0.2.0.js
-            `-- ui-bootstrap-tpls-0.2.0.js
-        `-- stylesheets
-    `-- plugins
+  |-- app
+  |   |-- admin
+  |       |-- admin_user.rb
+  |       |-- dashboard.rb
+  |       |-- site.rb
+  |       `-- user.rb
+  |   |-- assets
+  |       |-- images
+  |       |-- javascripts
+  |           |-- active_admin.js
+  |           |-- app
+  |               |-- app.js
+  |               |-- assets.js.erb
+  |               |-- controllers
+  |                   |-- app_ctrl.js
+  |                   `-- info_ctrl.js
+  |               |-- controllers.js
+  |               |-- directives.js
+  |               |-- filters.js
+  |               `-- services.js
+  |           `-- application.js
+  |       |-- stylesheets
+  |           |-- application.css.scss
+  |           `-- overrides.css.scss
+  |       `-- templates
+  |           |-- info.html
+  |           `-- login.html
+  |   |-- controllers
+  |       |-- api
+  |           `-- v1
+  |               |-- info_controller.rb
+  |               |-- sessions_controller.rb
+  |               `-- sites_controller.rb
+  |       |-- application_controller.rb
+  |       `-- home_controller.rb
+  |   |-- helpers
+  |      `-- application_helper.rb
+  |   |-- mailers
+  |   |-- models
+  |       |-- admin_user.rb
+  |       |-- site.rb
+  |       `-- user.rb
+  |   `-- views
+  |       |-- home
+  |           `-- index.html.erb
+  |       `-- layouts
+  |           `-- application.html.erb
+  |-- public
+  |   |-- 404.html
+  |   |-- 422.html
+  |   |-- 500.html
+  |   |-- favicon.ico
+  |   `-- robots.txt
+  `-- vendor
+      |-- assets
+          |-- javascripts
+              |-- angular-resource.js
+              |-- angular.js
+              |-- jquery.js
+              |-- ui-bootstrap-0.2.0.js
+              `-- ui-bootstrap-tpls-0.2.0.js
+          `-- stylesheets
+      `-- plugins
