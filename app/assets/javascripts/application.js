@@ -15,11 +15,12 @@
 
 //= require angular
 //= require angular-resource
-//= require ui-bootstrap-0.2.0
-//= require ui-bootstrap-tpls-0.2.0
+//= require ui-bootstrap
+//= require ui-bootstrap-tpls
 //= require app/assets
 //= require app/services
 //= require app/filters
 //= require app/directives
 //= require app/controllers
+//= require app/security
 //= require app/app

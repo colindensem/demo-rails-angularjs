@@ -4,23 +4,42 @@ The intention of this project is to connect rails with Angular JS. AngularJS to 
 Rails could of course be any API service, sinatra etc. I'm using rails as I know it (kind of) and it makes backend
 tasks easier, like email porocessing, queues and so on.
 
-Some aims/thoughts
+=== Some aims/thoughts
 
-Rails serve json via api's, possibly looking at Grape.
-Lean on the asset pipeline to comine and minify
-To embedd angular within the assets, using a organisation by modules and not layers.
+Rails serves json via api's, possibly looking at Grape.
+Lean on Rails comfort for server tasks, e.g. email, workflow, db access and so on.
+Lean on the asset pipeline to comine and minify. Which requires:
+ Embedding angularJS within the assets.
+  Aiming to use an organisation by modules and not layers.  Appears difficult to achieve,
+  layers works and it's in keeping with Rails, even if it's not where I'm at...
 
-Alternatives to the asset pipline would be lean on grunt and yoman to manage the angular app outside of rails, but compile into the public dir.
-This would then be easy when saty behind the likes of nginx.
+Alternatives to the asset pipline would be to utilise the likes of grunt and yoman. These tools
+ can manage the angularJS app outside of rails, but compile into the public dir.
+This would then be easy when sat behind the likes of nginx.
+    Pros:
+        Also convienent to pass AngularJS app to non rails developer.
+    Cons:
+        Another component to manage and possibly CORS.
 
-Or rather, avoid learning node as a json api server, avoid cross domain requests, avoid 2 seperate applications.
+Or rather:
+    avoid learning node as a json api server
+    avoid 2 seperate applications
+    avoid cross domain requests
 
-There are a number of ways to do the above, there are some points, where I'm not even certain if the approach is right.
+There are a number of ways to do the above, there are some points,
+where I'm not even certain if the approach is right, but it's a path...
 
 == Getting Started
 
 1. Should be viable to clone, migrate and then launch local server. All requests should invoke the home.index which really hands off right away to Angular.
 
+== With thanks
+
+To the many people who have blogged about AngularJS and those who've listened to my questions.
+
+I'd like to thank:
+ The guys behind angular-app, https://github.com/angular-app/angular-app. It's a cracking reference app and I've leant on it heavily.
+ Nils of http://nils-blum-oeste.net/ for a collection of vital articles on token_auth wrapping.
 
 == Description of Contents
 
@@ -87,7 +106,7 @@ The initial and relevant directory structure of this application is:
               |-- angular-resource.js
               |-- angular.js
               |-- jquery.js
-              |-- ui-bootstrap-0.2.0.js
-              `-- ui-bootstrap-tpls-0.2.0.js
+              |-- ui-bootstrap.js
+              `-- ui-bootstrap-tpls.js
           `-- stylesheets
       `-- plugins
