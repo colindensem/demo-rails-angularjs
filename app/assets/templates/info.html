@@ -1,3 +1,22 @@
 <p>hello world from info templates static text</p>
 
 <p>{{ message }}</p>
+
+<p example>click me</p>
+
+
+
+        <h5>{{ info.info }} </h5>
+        <p>{{ info.data.angular_js}}</p>
+        <p>by {{ info.data.author }}</p>
+        <p>Credits to:<ul>
+        <li ng-repeat="credit in info.data.credits">
+            {{ credit.name }} ~ {{ credit.msg}}
+        </li>
+        </ul>
+</p>
+
+<div ng-show='debug'>
+    <h5>Raw Info Service Response</h5>
+    <p>{{ info }} </p>
+</div>

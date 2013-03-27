@@ -6,9 +6,14 @@ class Api::V1::InfoController < ApplicationController
     def index
 
       render :status => 200,
-             :json => { :success => true,
+              :json => { :success => true,
                         :info => "About Project",
                         :data => { :author => 'Colin Densem',
-                                :angular_js => 'seems to work'} }
+                                :angular_js => 'seems to work',
+                                :credits => [
+                                    { name: 'Kyle Welsby', msg:'Pointers on Angular'}
+                                ]
+                        }
+              }
     end
 end

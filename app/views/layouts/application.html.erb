@@ -7,7 +7,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "library" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -17,7 +16,8 @@
     <div class="navbar-inner">
       <a class="brand">Rails + AngularJS</a>
       <ul class="nav">
-        <li ng-class=""><a href="/info">Info</a></li>
+        <li ng-class=""><a ng-href="/info">Info</a></li>
+        <li ng-class=""><a ng-href="/info2">Info(2)</a></li>
       </ul>
     </div>
 
@@ -29,6 +29,12 @@
 
 
   <footer>
+    <p><form>
+    <label class="checkbox">
+      <input type="checkbox" class="checkbox" ng-model="debug"/> Enable debug
+    </label>
+
+    </form> </p>
     <p class="pull-right">&copy; Company 2013</p>
   </footer>
 
