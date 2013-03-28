@@ -1,14 +1,28 @@
-<form name="form" class="form-horizontal" >
+<div ng-show="serverInvalid()" class="validation-summary">
+    <p>Something is wrong here</p>
 
-    <div class="control-group" ng-class="{error: form.Name.$invalid}">
+</div>
+
+<div id="'errors" ng-show="errors.length > 0">
+   <div class="alert error" ng-repeat="error in errors">
+       {{ error }}
+   </div>
+</div>
+
+
+<form name="myForm" class="form-horizontal" >
+
+    <div class="control-group" ng-class="{error: myForm.name.$invalid}">
         <label class="control" for="Name">Name</label>
         <div class="controls">
-            <input type="text" ng-model='site.name' id="Name" placeholder="">
+            <input type="text" ng-model='site.name' id="name" placeholder="" required>
         </div>
     </div>
 
     <div class="form-actions">
-        <button class="btn btn-primary" ng-click="save()">Save</button>
+        <button class="btn btn-primary"
+                ng-click="save()"
+                ng-disabled="myForm.$invalid || isUnchanged(site)">Save</button>
         <button class="btn">Cancel</button>
     </div>
 

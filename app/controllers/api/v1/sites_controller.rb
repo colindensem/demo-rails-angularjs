@@ -14,18 +14,23 @@ class Api::V1::SitesController < ApplicationController
   end
 
   def create
-    @site = Site.create(site_params)
-    respond_to do |format|
-      format.json { render :json => @site }
+    site = Site.create(site_params)
+
+    if site.valid?
+      render :json => site
+    else
+      render :json => site.errors.to_json, :status => 400
     end
 
   end
 
   def update
     site = Site.find(params[:id])
-    site.update_attributes!(site_params)
-    respond_to do |format|
-      format.json { render :json => site }
+    site.update_attributes(site_params)
+    if site.valid?
+      render :json => site
+    else
+      render :json => site.errors.to_json, :status => 400
     end
   end
 
