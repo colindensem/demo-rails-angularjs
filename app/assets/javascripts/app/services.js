@@ -22,10 +22,16 @@
     }]);
 
     app.factory('Site', ['$resource', 'TokenHandler',function($resource, tokenHandler){
-        var resource = $resource('/api/v1/sites/:site_id', {}, {
-            query: { method: 'GET'}
-        });
-        resource = tokenHandler.wrapActions( resource, ['query']);
+        var resource = $resource('/api/v1/sites/:id',
+            {id: '@id'},
+            {
+                query: { method: 'GET', isArray:true},
+                update: {method: 'PUT'},
+                delete: { method: 'DELETE'}
+            }
+        );
+        resource = tokenHandler.wrapActions( resource, ['query',
+            'update','delete', 'create','get']);
         return resource;
     }]);
 

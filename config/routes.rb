@@ -5,7 +5,7 @@ DemoRailsAngularjs::Application.routes.draw do
 
   devise_for :users, :skip => :all
 
-  namespace :api do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       devise_scope :user do
 
@@ -16,8 +16,8 @@ DemoRailsAngularjs::Application.routes.draw do
 
         get 'current_user' => 'users#show_current_user', :as => 'show_current_user'
       end
+      resources :sites
 
-      get 'sites' => 'sites#index', :as=>'sites'
       get 'info' => 'info#index', :as=>'info'
     end
   end

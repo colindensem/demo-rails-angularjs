@@ -1,5 +1,6 @@
 var app;
-app = angular.module('app', ['ui.bootstrap','security','app.services','app.controllers','app.filters','app.directives']);
+app = angular.module('app', ['ui.bootstrap','security','app.services',
+    'app.controllers','app.filters','app.directives']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
         $routeProvider.
@@ -13,8 +14,16 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: ASSETS['info']
         }).
         when('/sites', {
-            controller: 'SiteCtrl',
+            controller: 'SiteIndexCtrl',
             templateUrl: ASSETS['sites_index']
+        }).
+        when('/sites/new', {
+            controller: 'SiteCreateCtrl',
+            templateUrl: ASSETS['sites_form']
+        }).
+        when('/sites/edit/:editId', {
+            controller: 'SiteEditCtrl',
+            templateUrl: ASSETS['sites_form']
         }).
 
         otherwise({

@@ -2,11 +2,25 @@
 
 <p>A collection of sites, only visible to logged in users.</p>
 
-<ul>
-    <li ng-repeat="site in sites.data">
-        {{ site.name }}
-    </li>
-</ul>
+<table class="table table-striped">
+<thead>
+    <th>Name</th>
+    <th>Updated</th>
+    <th>Created</th>
+    <th><a href="sites/new"><i class="icon-plus"></i></a></th>
+</thead>
+    <tbody>
+    <tr ng-repeat="site in sites" id="site_{{site.id}}">
+       <td>{{site.name}}</td>
+        <td>{{site.updated_at | date: 'medium' }}</td>
+        <td>{{site.created_at | date: 'medium' }}</td>
+        <td>
+            <a ng-click="delete()"><i class="icon-remove"></i></a>
+            <a href="/sites/edit/{{site.id}}"><i class="icon-edit"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 <div ng-show='debug'>
     <h5>Raw Service Response</h5>
