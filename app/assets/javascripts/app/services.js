@@ -65,7 +65,7 @@
             // create new action wrapping the original and sending token
             resource[action] = function( data, success, error){
                 return resource['_' + action](
-                    angular.extend({}, data || {}, {access_token: tokenHandler.get()}),
+                    angular.extend({}, data || {}, {auth_token: tokenHandler.get()}),
                     success,
                     error
                 );

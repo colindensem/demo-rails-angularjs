@@ -35,8 +35,8 @@ gem 'meta_search', '>= 1.1.0.pre' # activeadmin needs this if Rails >= 3.1
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
-
+#gem 'unicorn'
+gem 'thin'
 # Deploy with Capistrano
 # gem 'capistrano'
 

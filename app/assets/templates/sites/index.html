@@ -1,0 +1,14 @@
+<h1>Secret Sites</h1>
+
+<p>A collection of sites, only visible to logged in users.</p>
+
+<ul>
+    <li ng-repeat="site in sites.data">
+        {{ site.name }}
+    </li>
+</ul>
+
+<div ng-show='debug'>
+    <h5>Raw Service Response</h5>
+    <p>{{ sites }} </p>
+</div>

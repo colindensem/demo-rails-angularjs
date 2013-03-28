@@ -14,7 +14,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
         }).
         when('/sites', {
             controller: 'SiteCtrl',
-            templateUrl: ASSETS['site']
+            templateUrl: ASSETS['sites_index']
         }).
 
         otherwise({
@@ -30,6 +30,8 @@ angular.module('app').run(['security', function(security) {
 
 
 app.config(function($httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]')
+        .attr('content');
 
     var interceptor = ['$rootScope', '$q', function(scope, $q) {
 
